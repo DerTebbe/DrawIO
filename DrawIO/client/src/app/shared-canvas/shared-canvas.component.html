@@ -1,0 +1,77 @@
+<div #containerRef class="canvas-container">
+  <canvas #backgroundCanvasRef
+          style="border-style: solid"
+          id="backgroundCanvas"
+          width="800px"
+          height="600px">
+  </canvas>
+  <canvas #drawingCanvasRef
+          id="drawingCanvas"
+          width="800px"
+          height="600px"
+          (mousedown)="handleMouseDown($event.clientX, $event.clientY)"
+          (mousemove)="handleMouseMove($event.clientX, $event.clientY)"
+          (mouseup)="handleMouseUp()"
+          (mouseleave)="handleMouseLeave()">
+  </canvas>
+  <div *ngIf="!this.selectedLayer">
+    <p>Wähle einen Layer aus, um darauf zu zeichnen!</p>
+  </div>
+</div>
+<br>
+<div class="container-fluid" style="margin-left: 315px">
+  <div class="row">
+    <div class="col-2 toolbar-column">
+      <ul style="list-style-type:none">
+        <li>
+          <label for="drawColorInput" style="margin-right: 60px">Farbe Linie: </label>
+          <input id="drawColorInput" type="color" [(ngModel)]="lineColor" />
+        </li>
+        <li>
+          <label for="lineThicknessInput">Dicke:</label>
+          <ul style="list-style-type:none">
+            <li>
+              <input id="lineThicknessInput" type="range" min="1" max="50" [(ngModel)]="lineWidth" />
+            </li>
+          </ul>
+        </li>
+        <li>
+          <label for="lineAlphaInput">Transparenz:</label>
+        </li>
+        <li>
+          <ul style="list-style-type:none">
+            <li>
+              <input id="lineAlphaInput" type="range" min="1" max="100" [(ngModel)]="lineAlpha" />
+            </li>
+          </ul>
+        </li>
+        <li>
+          <label for="backgroundColorInput" style="margin-right: 10px">Farbe Hintegrund:</label>
+          <input id="backgroundColorInput" type="color" [(ngModel)]="backgroundColor" (change)="handleBackgroundColorInput()" />
+        </li>
+        <li>
+          <label for="backgroundVisibleInput" style="margin-right: 10px;">Hintergrund sichtbar:</label>
+          <input id="backgroundVisibleInput" type="checkbox" [(ngModel)]="backgroundVisible" (change)="handleBackgroundVisibleInput()">
+        </li>
+      </ul>
+    </div>
+    <div class="col-2 toolbar-column">
+      <button type="button" class="btn btn-success btn-block" (click)="handleAddLayer()">Layer hinzufügen</button>
+      <button type="button" class="btn btn-danger btn-block" (click)="handleClearLayer()">Layer leeren</button>
+      <button type="button" class="btn btn-danger btn-block" (click)="handleRemoveLayer()">Layer löschen</button>
+      <br>
+      <ul #layerListRef id="layerlist" class="list-group">
+        <!-- canvas layer drag and drop items will be rendered here -->
+      </ul>
+    </div>
+    <div class="col-2 toolbar-column">
+      <button type="button" class="btn btn-info btn-block" (click)="downloadImage()">Download</button>
+      <button type="button" class="btn btn-success btn-block" (click)="openModal()" *ngIf="this.loginService.loggedInUser">Speichern und verlassen</button>
+    </div>
+    <div class="col-3 toolbar-column">
+      <app-chat [roomID]="roomID"></app-chat>
+    </div>
+  </div>
+</div>
+<div>
+</div>

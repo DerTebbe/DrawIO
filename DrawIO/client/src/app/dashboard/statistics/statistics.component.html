@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="container-fluid m-4 d-flex justify-content-around row">
+
+    <div class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Nutzer</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Nutzer insgesamt: <strong>{{userCount}}</strong></p>
+        <p class="card-text">Admins insgesamt: <strong>{{adminsCount}}</strong></p>
+
+      </div>
+    </div>
+    <div class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Bilder</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Bilder insgesamt: <strong>{{imageCount}}</strong></p>
+      </div>
+    </div>
+    <div class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Login</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Logins insgesamt: <strong>{{loginsCount}}</strong></p>
+        <p class="card-text"><a href="/dashboard/logins">Letzte Logins:</a></p>
+        <div *ngFor="let entry of lastLogins">
+          <div>{{entry.date}} <a href="/dashboard/users/edit/{{entry.user.id}}">{{entry.user.username}}</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

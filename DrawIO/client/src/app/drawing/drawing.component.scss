@@ -1,0 +1,16 @@
+@import 'src/assets/scss/styles';
+
+.container-fluid {
+  .row {
+    justify-content: center;
+    margin: 1em;
+  }
+  .btn {
+    border: 1px solid black;
+  }
+  p {
+    color: $drawio-red;
+  }
+}
+
+

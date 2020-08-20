@@ -1,0 +1,96 @@
+version: '3.5'
+
+services:
+
+  #<===============Portainer===============>
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.portainer-insecure.rule=Host(`portainer.fmuenscher.de`)"
+      - "traefik.http.routers.portainer-insecure.entrypoints=web"
+      - "traefik.http.routers.portainer-insecure.middlewares=redirect-to-https@docker"
+
+      - "traefik.http.routers.portainer-router.entrypoints=websecure"
+      - "traefik.http.middlewares.portainer-stripprefix.stripprefix.prefixes=/portainer"
+      - "traefik.http.routers.portainer-router.rule=Host(`portainer.fmuenscher.de`)"
+      - "traefik.http.routers.portainer-router.middlewares=portainer-stripprefix@docker"
+      - "traefik.http.services.portainer-service.loadbalancer.server.port=9000"
+      - "traefik.http.routers.portainer-router.tls=true"
+      - "traefik.http.routers.portainer-router.tls.certresolver=le"
+
+  #<===============TRAEFIK_V2.0===============>
+
+  traefik:
+    image: traefik:v2.0.1
+    command:
+      - "--log.level=DEBUG"
+      - "--api=true"
+      - "--api.dashboard"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik-net"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesResolvers.le.acme.httpchallenge.entrypoint=web"
+      - "--certificatesResolvers.le.acme.email=Felix.muenscher@gmail.com"
+      - "--certificatesResolvers.le.acme.storage=/letsencrypt/acme.json"
+      #- "--certificatesResolvers.le.acme.httpchallenge=true"
+      #- "--certificatesResolvers.le.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/srv/docker/acme:/letsencrypt"
+    networks:
+      - traefik-net
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    restart: on-failure
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.traefik-insecure.rule=Host(`traefik.fmuenscher.de`)"
+      - "traefik.http.routers.traefik-insecure.entrypoints=web"
+      - "traefik.http.routers.traefik-insecure.middlewares=redirect-to-https@docker"
+
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.rule=Host(`traefik.fmuenscher.de`)"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.tls=true"
+      - "traefik.http.routers.api.tls.certresolver=le"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      #- "traefik.http.routers.api.middlewares=auth"
+      #- "traefik.http.middlewares.auth.basicauth.users=admin:$apr1$/QX4PI.J$7XvexYhtlii2JyRYiEhsq1"
+
+      #- "traefik.http.routers.traefik-router.entrypoints=web"
+      #- "traefik.http.middlewares.traefik-stripprefix.stripprefix.prefixes=/traefik"
+      #- "traefik.http.routers.traefik-router.rule=PathPrefix(`/traefik`)"
+      #- "traefik.http.routers.traefik-router.middlewares=traefik-stripprefix@docker"
+      #- "traefik.http.services.traefik-service.loadbalancer.server.port=8080"
+
+  #<=============== REGISTRY ===============>
+  image-registry:
+    image: registry:latest
+    ports:
+      - "5000:5000"
+
+#<===============NETWORKS&VOLUMES===============>
+
+networks:
+  traefik-net:
+    name: traefik-net
+
+volumes:
+  portainer_data:

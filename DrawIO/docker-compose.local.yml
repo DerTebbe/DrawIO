@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - draw-io-net
+    volumes:
+      - mongo_data:/data/db
+
+  draw-io:
+    build: .
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - draw-io-net
+      - traefik-net
+    env_file:
+      - settings.env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=(Host(`drawio.fmuenscher.de`) && PathPrefix(`/`))"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.services.frontend-service.loadbalancer.server.port=8443"
+      - "traefik.http.routers.frontend.tls=true"
+      - "traefik.http.routers.frontend.tls.certresolver=le"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.frontend.middlewares=sslheader@docker"
+
+networks:
+  traefik-net:
+    external: true
+  draw-io-net:
+    internal: true
+
+volumes:
+  mongo_data:

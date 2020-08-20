@@ -1,0 +1,2996 @@
+[
+  {
+    "type": "get",
+    "url": "/stats/users/admin",
+    "title": "Get count of admins",
+    "name": "GetAdminCount",
+    "group": "Admin",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "admins",
+            "description": "<p>List of admins</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating count of documents in collection has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"admins\": [\n        0: {\n           \"id\":1,\n           \"username\":\"Kneiselnator2000\",\n           \"firstName\":\"Peter\",\n           \"lastName\":\"Kneisel\",\n           \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n           \"rights\":\"2\"\n           },\n    ],\n    \"message\": \"Successfully requested admin count\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/stats/users/admin",
+    "title": "Get count of admins",
+    "name": "GetAdminCount",
+    "group": "Admin",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "admins",
+            "description": "<p>List of admins</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating count of documents in collection has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"admins\": [\n        0: {\n           \"id\":1,\n           \"username\":\"Kneiselnator2000\",\n           \"firstName\":\"Peter\",\n           \"lastName\":\"Kneisel\",\n           \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n           \"rights\":\"2\"\n           },\n    ],\n    \"message\": \"Successfully requested admin count\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/stats/count/:collection",
+    "title": "Get count of documents in collection",
+    "name": "GetDocumentCountOfCollection",
+    "group": "Admin",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "collection",
+            "description": "<p>Collection whose documents should be counted</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>Number of documents in collection</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating count of documents in collection has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"count\": 3\n    \"message\": \"Successfully requested count logins\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/stats/count/:collection",
+    "title": "Get count of documents in collection",
+    "name": "GetDocumentCountOfCollection",
+    "group": "Admin",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "collection",
+            "description": "<p>Collection whose documents should be counted</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>Number of documents in collection</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating count of documents in collection has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"count\": 3\n    \"message\": \"Successfully requested count logins\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/stats/login/history/:skip/:limit",
+    "title": "Get login history",
+    "name": "GetLoginhistory",
+    "group": "Admin",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "skip",
+            "description": "<p>Index of where to start getting logins</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Index of where to end getting logins</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "loginHistory",
+            "description": "<p>History of all logins</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the login history has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"loginHistory\": [\n        0: {\n            user: {\n               \"id\":1,\n               \"firstName\":\"Peter\",\n               \"lastName\":\"Kneisel\",\n               \"username\":\"admin\",\n               \"creationDate\":\"2018-10-21 14:19:12\",\n               \"rights\":2\n            },\n            date: 2020-01-09T09:53:26.087+00:00\n        }\n    ]\n    \"message\": \"Successfully requested login history\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "get",
+    "url": "/stats/login/history/:skip/:limit",
+    "title": "Get login history",
+    "name": "GetLoginhistory",
+    "group": "Admin",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "skip",
+            "description": "<p>Index of where to start getting logins</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Index of where to end getting logins</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "loginHistory",
+            "description": "<p>History of all logins</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the login history has been loaded</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"loginHistory\": [\n        0: {\n            user: {\n               \"id\":1,\n               \"firstName\":\"Peter\",\n               \"lastName\":\"Kneisel\",\n               \"username\":\"admin\",\n               \"creationDate\":\"2018-10-21 14:19:12\",\n               \"rights\":2\n            },\n            date: 2020-01-09T09:53:26.087+00:00\n        }\n    ]\n    \"message\": \"Successfully requested login history\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Admin"
+  },
+  {
+    "type": "delete",
+    "url": "/image/:id",
+    "title": "Delete image with given id",
+    "name": "DeleteImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The id of the image that should be deleted</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been deleted</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully deleted image 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested image can not be deleted</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested image can not be deleted\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "delete",
+    "url": "/image/:id",
+    "title": "Delete image with given id",
+    "name": "DeleteImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The id of the image that should be deleted</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been deleted</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully deleted image 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested image can not be deleted</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested image can not be deleted\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/image/:id",
+    "title": "Get image with given id",
+    "name": "GetImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The id of the requested image</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Image",
+            "optional": false,
+            "field": "image",
+            "description": "<p>The requested image object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"image\":{\n        \"id\": '5e17885fb54c120ab05bcfd0',\n        \"comments\": [],\n        \"description\": \"Expressionistisches Bild eines Baums auf einer grünen Weide\",\n        \"authors\": [\n            0: {\n                username: 'Kneiselnator2000',\n                password: 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413',\n                firstName: 'Peter',\n                lastName: 'Kneisel',\n                creationDate: '2020-01-08T19:23:00.112Z',\n                rights: '0',\n                id: '5e162c14cc7c242d74a33629'\n            }\n        ],\n        \"timestamp\": \"2020-01-09T20:09:03.433Z\",\n        \"imageData_b64\": 'data:image/png;base64,iVBORw0KGgoAAA...'\n    },\n    \"message\": \"Successfully requested image by id: 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/image/:id",
+    "title": "Get image with given id",
+    "name": "GetImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>The id of the requested image</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Image",
+            "optional": false,
+            "field": "image",
+            "description": "<p>The requested image object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"image\":{\n        \"id\": '5e17885fb54c120ab05bcfd0',\n        \"comments\": [],\n        \"description\": \"Expressionistisches Bild eines Baums auf einer grünen Weide\",\n        \"authors\": [\n            0: {\n                username: 'Kneiselnator2000',\n                password: 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413',\n                firstName: 'Peter',\n                lastName: 'Kneisel',\n                creationDate: '2020-01-08T19:23:00.112Z',\n                rights: '0',\n                id: '5e162c14cc7c242d74a33629'\n            }\n        ],\n        \"timestamp\": \"2020-01-09T20:09:03.433Z\",\n        \"imageData_b64\": 'data:image/png;base64,iVBORw0KGgoAAA...'\n    },\n    \"message\": \"Successfully requested image by id: 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/images/:start/:limit",
+    "title": "Get imageIDs within given range",
+    "name": "GetImageIDs",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "start",
+            "description": "<p>Index of where to start getting image ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Index of where to end getting image ids</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string[]",
+            "optional": false,
+            "field": "idList",
+            "description": "<p>List of image ids within given range</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image ids have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"idList\": [\n        '5e17885fb54c120ab05bcfd0',\n        '5e1791f998821e047069d375'\n    ]\n    \"message\": \"Successfully requested image list\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/images/:start/:limit",
+    "title": "Get imageIDs within given range",
+    "name": "GetImageIDs",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "start",
+            "description": "<p>Index of where to start getting image ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Index of where to end getting image ids</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string[]",
+            "optional": false,
+            "field": "idList",
+            "description": "<p>List of image ids within given range</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image ids have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"idList\": [\n        '5e17885fb54c120ab05bcfd0',\n        '5e1791f998821e047069d375'\n    ]\n    \"message\": \"Successfully requested image list\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/images/:id",
+    "title": "Get imageIDs made by given user",
+    "name": "GetImageIDsOfUser",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID of user whose images should be loaded</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string[]",
+            "optional": false,
+            "field": "idList",
+            "description": "<p>List of image ids</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image ids have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"idList\": [\n        '5e17885fb54c120ab05bcfd0',\n        '5e1791f998821e047069d375'\n    ]\n    \"message\": \"Successfully requested image list\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/images/:id",
+    "title": "Get imageIDs made by given user",
+    "name": "GetImageIDsOfUser",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "id",
+            "description": "<p>ID of user whose images should be loaded</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string[]",
+            "optional": false,
+            "field": "idList",
+            "description": "<p>List of image ids</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image ids have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"idList\": [\n        '5e17885fb54c120ab05bcfd0',\n        '5e1791f998821e047069d375'\n    ]\n    \"message\": \"Successfully requested image list\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "post",
+    "url": "/image",
+    "title": "Persist a new image",
+    "name": "PostImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Title of image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "User[]",
+            "optional": false,
+            "field": "authors",
+            "description": "<p>Authors of image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "timestamp",
+            "description": "<p>Timestamp of when image was created</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "image_b64",
+            "description": "<p>Image as a string</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the new image has been created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"imageId\": '5e17885fb54c120ab05bcfd0',\n    \"message\":\"Successfully created new image\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "post",
+    "url": "/image",
+    "title": "Persist a new image",
+    "name": "PostImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Title of image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "User[]",
+            "optional": false,
+            "field": "authors",
+            "description": "<p>Authors of image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "timestamp",
+            "description": "<p>Timestamp of when image was created</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "image_b64",
+            "description": "<p>Image as a string</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the new image has been created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"imageId\": '5e17885fb54c120ab05bcfd0',\n    \"message\":\"Successfully created new image\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "put",
+    "url": "/image/:id",
+    "title": "Update image with given id",
+    "name": "PutImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "id",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "DrawingComment[]",
+            "optional": false,
+            "field": "comments",
+            "description": "<p>List of comments for given image</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully updated image 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested image can not be found</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The image can not be found\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "put",
+    "url": "/image/:id",
+    "title": "Update image with given id",
+    "name": "PutImage",
+    "group": "Image",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "id",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested image</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "DrawingComment[]",
+            "optional": false,
+            "field": "comments",
+            "description": "<p>List of comments for given image</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the image has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully updated image 5e17885fb54c120ab05bcfd0\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested image can not be found</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The image can not be found\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/login",
+    "title": "Request login state",
+    "name": "GetLogin",
+    "group": "Login",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating that the user is still logged in</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"username\":\"Kneiselnator2000\",\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n        \"rights\":\"2\"\n     },\n     \"message\":\"User still logged in\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "get",
+    "url": "/login",
+    "title": "Request login state",
+    "name": "GetLogin",
+    "group": "Login",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating that the user is still logged in</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"username\":\"Kneiselnator2000\",\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n        \"rights\":\"2\"\n     },\n     \"message\":\"User still logged in\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "post",
+    "url": "/login",
+    "title": "Send login request",
+    "name": "PostLogin",
+    "group": "Login",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the user to log in</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user to log in</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user logged in successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"username\":\"Kneiselnator2000\",\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n        \"rights\":\"2\"\n    },\n    \"message\":\"Successfully logged in\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "LoginIncorrect",
+            "description": "<p>The login data provided is not correct.</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "LoginIncorrect:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Username or password is incorrect.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Errror\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "post",
+    "url": "/login",
+    "title": "Send login request",
+    "name": "PostLogin",
+    "group": "Login",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the user to log in</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user to log in</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user logged in successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"username\":\"Kneiselnator2000\",\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"creationDate\":\"2017-11-12T09:33:25.000Z\",\n        \"rights\":\"2\"\n    },\n    \"message\":\"Successfully logged in\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "LoginIncorrect",
+            "description": "<p>The login data provided is not correct.</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "LoginIncorrect:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Username or password is incorrect.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Errror\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Login"
+  },
+  {
+    "type": "post",
+    "url": "/logout",
+    "title": "Logout user",
+    "name": "PostLogout",
+    "group": "Logout",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating that the user is logged out</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    message: \"Successfully logged out\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Logout"
+  },
+  {
+    "type": "post",
+    "url": "/logout",
+    "title": "Logout user",
+    "name": "PostLogout",
+    "group": "Logout",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating that the user is logged out</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    message: \"Successfully logged out\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Logout"
+  },
+  {
+    "type": "get",
+    "url": "/checkRoom/:roomID",
+    "title": "Check if room is available",
+    "name": "CheckRoomID",
+    "group": "Room",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "roomID",
+            "description": "<p>The id of room that should be checked</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "400",
+            "optional": false,
+            "field": "RoomIsNotAvailable",
+            "description": "<p>The requested room is not available</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 400 Bad request\n{\n    \"message\": \"The room is not available.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Room"
+  },
+  {
+    "type": "get",
+    "url": "/checkRoom/:roomID",
+    "title": "Check if room is available",
+    "name": "CheckRoomID",
+    "group": "Room",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "roomID",
+            "description": "<p>The id of room that should be checked</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "400",
+            "optional": false,
+            "field": "RoomIsNotAvailable",
+            "description": "<p>The requested room is not available</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 400 Bad request\n{\n    \"message\": \"The room is not available.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Room"
+  },
+  {
+    "type": "get",
+    "url": "/getUsers/:roomID",
+    "title": "Get users of room",
+    "name": "GetUsersOfRoom",
+    "group": "Room",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "roomID",
+            "description": "<p>The id of the requested room</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>List of all user objects of requested room</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the users have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n users: [\n     0: {\n     username: 'Kneiselnator2000',\n     password: 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413',\n     firstName: 'Peter',\n     lastName: 'Kneisel',\n     creationDate: '2020-01-08T19:23:00.112Z',\n     rights: '0',\n     id: '5e162c14cc7c242d74a33629'\n     }\n ],\n message: 'Successfully requested users of room'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "404",
+            "optional": false,
+            "field": "NoExistingRoom",
+            "description": "<p>Room Could not find room</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 400 Not found\n{\n    \"message\": \"Could not find room\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Room"
+  },
+  {
+    "type": "get",
+    "url": "/getUsers/:roomID",
+    "title": "Get users of room",
+    "name": "GetUsersOfRoom",
+    "group": "Room",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "roomID",
+            "description": "<p>The id of the requested room</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "users",
+            "description": "<p>List of all user objects of requested room</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the users have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n users: [\n     0: {\n     username: 'Kneiselnator2000',\n     password: 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413',\n     firstName: 'Peter',\n     lastName: 'Kneisel',\n     creationDate: '2020-01-08T19:23:00.112Z',\n     rights: '0',\n     id: '5e162c14cc7c242d74a33629'\n     }\n ],\n message: 'Successfully requested users of room'\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "404",
+            "optional": false,
+            "field": "NoExistingRoom",
+            "description": "<p>Room Could not find room</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 400 Not found\n{\n    \"message\": \"Could not find room\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Room"
+  },
+  {
+    "type": "delete",
+    "url": "/user/:userId",
+    "title": "Delete user with given id",
+    "name": "DeleteUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully deleted user ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested user can not be deleted\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "delete",
+    "url": "/user/:userId",
+    "title": "Delete user with given id",
+    "name": "DeleteUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully deleted user ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested user can not be deleted\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/user:userId",
+    "title": "Get user with given id",
+    "name": "GetUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The requested user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"username\":\"admin\",\n        \"creationDate\":\"2018-10-21 14:19:12\",\n        \"rights\":2\n    },\n    \"message\":\"Successfully got user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested user can not be found.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/user:userId",
+    "title": "Get user with given id",
+    "name": "GetUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>The requested user object</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"username\":\"admin\",\n        \"creationDate\":\"2018-10-21 14:19:12\",\n        \"rights\":2\n    },\n    \"message\":\"Successfully got user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The requested user can not be found.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user",
+    "title": "Create a new user",
+    "name": "PostUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the new user has been created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"userId\": 0,\n    \"message\":\"Successfully created new user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "400",
+            "optional": false,
+            "field": "NotAllMandatoryFields",
+            "description": "<p>The request did not contain all mandatory fields</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotAllMandatoryFields:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n    \"message\":\"Not all mandatory fields are filled in\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user",
+    "title": "Create a new user",
+    "name": "PostUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>First name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>Last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Username of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the new user has been created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"userId\": 0,\n    \"message\":\"Successfully created new user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "400",
+            "optional": false,
+            "field": "NotAllMandatoryFields",
+            "description": "<p>The request did not contain all mandatory fields</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotAllMandatoryFields:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n    \"message\":\"Not all mandatory fields are filled in\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "/user/:userId",
+    "title": "Update user with given id",
+    "name": "PutUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>The (new) first name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>The (new) last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Optional: The (new) password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully updated user ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "400",
+            "optional": false,
+            "field": "NotAllMandatoryFields",
+            "description": "<p>The request did not contain all mandatory fields</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotAllMandatoryFields:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n    \"message\":\"Not all mandatory fields are filled in\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The user can not be found\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
+    "url": "/user/:userId",
+    "title": "Update user with given id",
+    "name": "PutUser",
+    "group": "User",
+    "version": "2.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>The id of the requested user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "firstName",
+            "description": "<p>The (new) first name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "lastName",
+            "description": "<p>The (new) last name of the user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Optional: The (new) password of the user</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the user has been updated</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"message\":\"Successfully updated user ...\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "400",
+            "optional": false,
+            "field": "NotAllMandatoryFields",
+            "description": "<p>The request did not contain all mandatory fields</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "404",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The requested user can not be found</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          },
+          {
+            "group": "Client Error",
+            "type": "403",
+            "optional": false,
+            "field": "NotAuthorized",
+            "description": "<p>The user trying to create a new user is not logged in</p>"
+          }
+        ],
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "NotAllMandatoryFields:",
+          "content": "HTTP/1.1 400 Bad Request\n{\n    \"message\":\"Not all mandatory fields are filled in\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotFound:",
+          "content": "HTTP/1.1 404 Not Found\n{\n    \"message\":\"The user can not be found\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "NotAuthorized:",
+          "content": "HTTP/1.1 403 Forbidden\n{\n    \"message\":\"Cannot create user since you have insufficient rights\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/users",
+    "title": "Get all users",
+    "name": "GetUsers",
+    "group": "Users",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "userList",
+            "description": "<p>The list of all users</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the users have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"username\":\"admin\",\n        \"creationDate\":\"2018-10-21 14:19:12\",\n        \"rights\":2\n    },\n    \"message\":\"Successfully got user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ],
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "get",
+    "url": "/users",
+    "title": "Get all users",
+    "name": "GetUsers",
+    "group": "Users",
+    "version": "2.0.0",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User[]",
+            "optional": false,
+            "field": "userList",
+            "description": "<p>The list of all users</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Message stating the users have been found</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"user\":{\n        \"id\":1,\n        \"firstName\":\"Peter\",\n        \"lastName\":\"Kneisel\",\n        \"username\":\"admin\",\n        \"creationDate\":\"2018-10-21 14:19:12\",\n        \"rights\":2\n    },\n    \"message\":\"Successfully got user\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Server Error": [
+          {
+            "group": "Server Error",
+            "type": "500",
+            "optional": false,
+            "field": "DatabaseRequestFailed",
+            "description": "<p>The request to the database failed</p>"
+          }
+        ],
+        "Client Error": [
+          {
+            "group": "Client Error",
+            "type": "401",
+            "optional": false,
+            "field": "SessionNotFound",
+            "description": "<p>The session of the user is expired or was not set</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "DatabaseRequestFailed:",
+          "content": "HTTP/1.1 500 Internal Server Error\n{\n    \"message\":\"Database request failed: ...\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "SessionNotFound:",
+          "content": "HTTP/1.1 401 Unauthorized\n{\n    \"message\":\"Session expired, please log in again.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/server.ts",
+    "groupTitle": "Users"
+  }
+]

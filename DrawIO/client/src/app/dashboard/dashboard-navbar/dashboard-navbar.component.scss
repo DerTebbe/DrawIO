@@ -1,0 +1,12 @@
+@import "../../../assets/scss/styles";
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .btn-primary {
+    background-color: $drawio-black-hover-light;
+  }
+}

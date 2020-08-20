@@ -1,0 +1,31 @@
+
+<div class="d-flex" id="wrapper" [ngClass]="{'toggled': toggled}">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+      <span class="cursor-pointer" (click)="router.navigateByUrl('/dashboard')">Dashboard</span>
+      <button class="btn fa fa-arrow-left pull-right" (click)="toggled = !toggled"></button>
+    </div>
+    <div class="list-group list-group-flush">
+      <button class="btn btn-success m-2" (click)="openRegisterModal()">Nutzer hinzufügen</button>
+      <button class="btn btn-success m-2" routerLink="draw">Bild hinzufügen</button>
+      <hr class="dropdown-divider">
+      <button class="btn btn-outline-info m-2" routerLink="users">Alle Nutzer</button>
+      <button class="btn btn-outline-info m-2" routerLink="gallery">Alle Bilder</button>
+      <button class="btn btn-outline-info m-2" routerLink="logins">Alle Logins</button>
+      <button class="btn btn-outline-info m-2" routerLink="statistics">Statistiken</button>
+
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <a class="btn" id="toggle" (click)="toggled = !toggled"></a>
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+      <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+

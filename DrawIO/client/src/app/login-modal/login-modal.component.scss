@@ -1,0 +1,11 @@
+@import "src/assets/scss/styles";
+
+.form-group {
+  input[type="text"] {
+    margin-bottom: 20px;
+    &:focus {
+      box-shadow: 0 0 0 .2rem $drawio-white-hover-dark;
+      border-color: $drawio-white-hover-dark;
+    }
+  }
+}

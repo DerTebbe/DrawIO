@@ -1,0 +1,8 @@
+<header>
+  <app-navbar *ngIf="!loginService.hasRights(Rights.Admin)" [title]="title"></app-navbar>
+  <app-dashboard-navbar *ngIf="loginService.hasRights(Rights.Admin)" [title]="title"></app-dashboard-navbar>
+</header>
+<main>
+  <app-alerts></app-alerts>
+  <router-outlet></router-outlet>
+</main>

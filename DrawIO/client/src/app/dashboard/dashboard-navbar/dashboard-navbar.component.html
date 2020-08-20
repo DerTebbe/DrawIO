@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark mb-5">
+  <img src="../../../assets/images/LogoWeiß.png" alt="Logo" class="logo cursor-pointer" (click)="router.navigateByUrl('')">
+  <button class="navbar-toggler" type="button" (click)="navbarOpen = !navbarOpen">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
+    <div class="mr-auto"></div>
+    <div class="navbar-nav">
+        <button class="btn btn-primary m-1" type="button" routerLink="dashboard/gallery">Alle Bilder</button>
+        <button class="btn btn-primary m-1" type="button" routerLink="dashboard/users">Alle Nutzer</button>
+        <button class="btn btn-primary m-1" type="button" (click)="handleLogout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!--<nav class="navbar navbar-dark mb-5">
+  <a href="#" class="navbar-brand mb-0 h1"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <span>
+    <a routerLink="dashboard" *ngIf="loginService.hasRights(Rights.Admin)">Dashboard</a>
+  </span>
+
+  <span>
+    <button class="btn btn-primary" type="button" (click)="handleLogout()">Alle Bilder</button>
+    <button class="btn btn-primary" type="button" routerLink="dashboard/users">Alle Nutzer</button>
+    <button class="btn btn-primary" type="button" (click)="handleLogout()">Logout</button>
+  </span>
+</nav>-->

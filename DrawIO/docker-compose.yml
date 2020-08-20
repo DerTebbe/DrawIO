@@ -1,0 +1,67 @@
+version: '3.7'
+
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - draw-io-net
+    volumes:
+      - mongo_data:/data/db
+
+  db-manager:
+    image: mongo-express:latest
+    networks:
+      - draw-io-net
+      - traefik-net
+    depends_on:
+      - db
+    env_file:
+      - settings-mongo-express.env
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.db-man-insecure.rule=Host(`dio-db.fmuenscher.de`)"
+      - "traefik.http.routers.db-man-insecure.entrypoints=web"
+      - "traefik.http.routers.db-man-insecure.middlewares=redirect-to-https@docker"
+
+      - "traefik.http.routers.db-man.rule=(Host(`dio-db.fmuenscher.de`) && PathPrefix(`/`))"
+      - "traefik.http.routers.db-man.entrypoints=websecure"
+      - "traefik.http.services.db-man-service.loadbalancer.server.port=8081"
+      - "traefik.http.routers.db-man.tls=true"
+      - "traefik.http.routers.db-man.tls.certresolver=le"
+
+  draw-io:
+    image: drawio:latest
+    depends_on:
+      - db
+    restart: on-failure
+    networks:
+      - draw-io-net
+      - traefik-net
+    env_file:
+      - settings.env
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.frontend-insecure.rule=Host(`drawio.fmuenscher.de`)"
+      - "traefik.http.routers.frontend-insecure.entrypoints=web"
+      - "traefik.http.routers.frontend-insecure.middlewares=redirect-to-https@docker"
+
+      - "traefik.http.routers.frontend.rule=(Host(`drawio.fmuenscher.de`) && PathPrefix(`/`))"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.services.frontend-service.loadbalancer.server.port=8443"
+      - "traefik.http.routers.frontend.tls=true"
+      - "traefik.http.routers.frontend.tls.certresolver=le"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.frontend.middlewares=sslheader@docker"
+
+networks:
+  traefik-net:
+    external: true
+  draw-io-net:
+    internal: true
+
+volumes:
+  mongo_data:

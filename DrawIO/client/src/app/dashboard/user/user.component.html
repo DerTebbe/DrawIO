@@ -1,0 +1,12 @@
+<div class="card">
+  <img class="photo" [src]="'https://robohash.org/' + user.id" alt="Profilbild von {{this.user.username}}"/>
+  <div class="card-body">
+    <h5 class="card-title">{{this.user.username}}</h5>
+    <span class="">{{this.user.creationDate.toLocaleString()}}</span>
+    <p class="card-text">{{this.user.firstName}} {{this.user.lastName}}</p>
+    <div class="row">
+      <button class="col btn btn-sm btn-primary" (click)="openEditModal()">edit <span class="fa fa-pencil"></span></button>
+      <button *ngIf="user.id != loginService.loggedInUser.id" class="col btn btn-sm btn-danger" (click)="delete()">delete <span class="fa fa-trash"></span></button>
+    </div>
+  </div>
+</div>

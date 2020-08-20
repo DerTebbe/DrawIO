@@ -1,0 +1,24 @@
+@import "../../assets/scss/styles";
+
+#robohash {
+  height: 80px;
+  padding-bottom: 15px
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .btn-primary {
+    background-color: $drawio-black-hover-light;
+  }
+}
+.test {
+}
+.logo:hover {
+  .test {
+    color: red;
+  }
+}

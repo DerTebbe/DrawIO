@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <main>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="profile-header">
+          <h3 class="heading">Profil</h3>
+        </div>
+        <div class="left">
+          <div class="photo-left">
+            <img class="photo" [src]="'https://robohash.org/' + loginservice.loggedInUser.id"/>
+          </div>
+          <h4 class="name">{{loginservice.loggedInUser.username}}</h4>
+          <p class="info">{{loginservice.loggedInUser.firstName + ' ' + loginservice.loggedInUser.lastName}}</p>
+          <div class="stats row">
+            <div class="stat col-xs-6" style="padding-right: 50px;">
+              <p class="number-stat">{{uploads}}</p>
+              <p class="desc-stat">Uploads</p>
+            </div>
+            <div class="stat col-xs-6">
+              <p class="number-stat">{{loginservice.loggedInUser.creationDate | date: 'dd/MM/yyyy'}}</p>
+              <p class="desc-stat">Mitglied seit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right col-lg-8">
+        <ul class="nav">
+          <li id="gallery" [ngClass]="{selected: galleryIsOpen}" (click)="openPersonalGallery()">Deine neuesten Werke</li>
+          <li id="settings" [ngClass]="{selected: !galleryIsOpen}" (click)="openProfileSettings()">Einstellungen</li>
+        </ul>
+        <div *ngIf="galleryIsOpen && images.length !== 0" class="row gallery">
+          <div class="col-md-4 drawing-container" *ngFor="let image of images">
+            <img [src]="image.imageData_b64"/>
+            <div class="drawing-text">
+              <p class="drawing-text-title">{{image.title}}</p>
+              <p class="drawing-text-description">{{image.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="galleryIsOpen && images.length === 0" class="row gallery">
+          <p>Noch keine Bilder erstellt...</p>
+        </div>
+        <div *ngIf="!galleryIsOpen" class="row gallery">
+          <div>
+            <div class="form-group">
+              <label for="vornameInput">Vorname</label>
+              <input [(ngModel)]="user.firstName" type="text" class="form-control inputfield" id="vornameInput"
+                     placeholder="Max" name="vorname" (input)="change()" >
+            </div>
+            <div class="form-group">
+              <label for="nachnameInput">Nachname</label>
+              <input [(ngModel)]="user.lastName" type="text" class="form-control inputfield" id="nachnameInput"
+                     placeholder="Mustermann" name="nachname" (input)="change()">
+            </div>
+            <div class="form-group">
+              <label for="usernameInput">Username</label>
+              <textarea [(ngModel)]="user.username" type="text" class="form-control inputfield" id="usernameInput"
+                        placeholder="Max123" name="description" (input)="change()"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="passwordInput">Altes Passwort überschreiben</label>
+              <input [(ngModel)]="password" type="password" class="form-control inputfield" id="passwordInput"
+                     name="description" placeholder="Neues Passwort" (input)="change()">
+            </div>
+            <button (click)="editUser()" type="submit" class="btn btn-primary savechanges">Änderungen speichern</button>
+            <button (click)="openDeleteUserModal()" type="submit" class="btn btn-primary deleteUserBtn">Profil löschen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

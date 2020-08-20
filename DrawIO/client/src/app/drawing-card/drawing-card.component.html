@@ -1,0 +1,22 @@
+<div class="card drawing-card" style="width: 18rem;">
+  <img class="card-img-top" [src]="imageDataB64" alt="Card image">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">
+      {{description}}
+    </p>
+    <p class="card-text">
+      {{authorsString}}
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let comment of comments; let i = index">{{comment.comment}}</li>
+  </ul>
+  <div class="card-footer">
+    <div class="d-flex justify-content-center row">
+      <button class="btn btn-primary" (click)="comment()"><i class="fa fa-comment"></i></button>
+      <button *ngIf="isAdmin || isAuthor" class="btn btn-success" (click)="edit()"><i class="fa fa-pencil"></i></button>
+      <button *ngIf="isAdmin || isAuthor" class="btn btn-danger" (click)="delete()"><i class="fa fa-trash"></i></button>
+    </div>
+  </div>
+</div>

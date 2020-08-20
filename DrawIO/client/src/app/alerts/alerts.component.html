@@ -1,0 +1,1 @@
+<ngb-alert *ngFor="let alert of this.alertService.getAlerts()" [type]="alert.type" (close)="this.alertService.removeAlert(alert)">{{alert.message}}</ngb-alert>

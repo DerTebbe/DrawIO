@@ -1,0 +1,14 @@
+{
+  "name": "draw-io-server",
+  "version": "1.0.0",
+  "description": "Drawing application using ApiDoc, CryptoJS, Express-Sessions, and a MongoDB database",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2020-01-10T22:44:04.773Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.6"
+  }
+}

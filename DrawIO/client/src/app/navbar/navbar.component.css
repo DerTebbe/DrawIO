@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #343a40;
+  margin-bottom: 0 !important;
+}
+.navbar * {
+  margin-left: 5px;
+}
+.navbar .navbar-brand {
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=navbar.component.css.map */

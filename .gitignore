@@ -1,0 +1,6 @@
+# IDE files
+/.idea
+node_modules
+/working/
+*.js
+*.js.map

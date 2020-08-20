@@ -1,0 +1,66 @@
+<ng-container *ngIf="this.info">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 style="margin-left: 30px; margin-top: 20px">Zeichne dein Meisterwerk!</h3>
+      </div>
+      <div>
+        <h3 class="d-inline-block text-right" style="margin-right: 30px; margin-top: 20px">RaumID: {{roomID}}</h3>
+      </div>
+    </div>
+    <ng-container *ngIf="loginService.loggedInUser">
+      <div class="row"><button class="btn" (click)="sendCreateRoom()">Gemeinsamen Raum erstellen</button></div>
+      <div class="row">
+        <label for="joinRoomInput">Room ID:</label>
+        <input id="joinRoomInput" [(ngModel)]="toJoinRoomID" type="number">
+        <button class="btn" (click)="sendJoinRoom()">Raum beitreten</button>
+        <p #invalidRoomRef></p>
+      </div>
+    </ng-container>
+    <div class="row"><button class="btn" (click)="drawOffline()">Alleine zeichnen</button></div>
+  </div>
+</ng-container>
+<ng-container *ngIf="!info">
+  <ng-container *ngIf="online">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 style="margin-left: 30px; margin-top: 20px">Zeichne dein Meisterwerk!</h3>
+      </div>
+      <div>
+        <h3 class="d-inline-block text-right" style="margin-right: 30px; margin-top: 20px">RaumID: {{roomID}}</h3>
+      </div>
+    </div>
+    <app-shared-canvas [online]="true" [roomID]="roomID"></app-shared-canvas>
+  </ng-container>
+  <ng-container *ngIf="offline">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h3 style="margin-left: 30px; margin-top: 20px">Zeichne dein Meisterwerk!</h3>
+      </div>
+      <div>
+        <h3 class="d-inline-block text-right" style="margin-right: 30px; margin-top: 20px">RaumID: {{roomID}}</h3>
+      </div>
+    </div>
+    <app-shared-canvas [online]="false"></app-shared-canvas>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="loginService.hasRights(Rights.Admin)">
+  <div class="container">
+    <div>
+      <label for="imageInput">Bild</label>
+      <input id="imageInput" type="file" class="form-control col" (input)="imageInput($event)">
+    </div>
+    <div>
+      <label for="titleInput">Titel</label>
+      <input id="titleInput" type="text" class="form-control col" [(ngModel)]="title">
+    </div>
+    <div>
+      <label for="descriptionInput">Beschreibung</label>
+      <input id="descriptionInput" type="text" class="form-control col" [(ngModel)]="description">
+    </div>
+    <div>
+      <button class="btn btn-outline-primary" (click)="upload()">Hochladen</button>
+    </div>
+  </div>
+</ng-container>
+

@@ -1,0 +1,33 @@
+### Check login state
+GET https://localhost:8443/users HTTP/1.1
+Cookie: connect.sid=s%3AmNMSreenZV9g827LQ2pfEbEZKByY713Q.iyE2jtq3K9cjb4UjQsXNF5pmJAEInx9JyABMVn0tFqM
+
+### Login
+POST https://localhost:8443/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "1",
+  "password": "1"
+}
+
+### Delete
+DELETE https://localhost:8443/user/5e162395db927142505787f9 HTTP/1.1
+Cookie: connect.sid=s%3AySRarOBL481NYUnRyhJDSTeXhx57adsu.6pPUZkVdLkE7niKb5nxcoVakjpggkzCTMZKDADmgN0c
+
+### Put
+PUT https://localhost:8443/user/5e16fa721351d81610f7fd82 HTTP/1.1
+Cookie: connect.sid=s%3Aefl9PQe_sOXpKwBNImrBOs4wfU0CxsKh.ve4BgGH4sqnjKD4RPddPuvz1QpaTREojig9DVUhMTOk
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin",
+  "firstName": "Daniel",
+  "lastName": "Daniel"
+
+}
+### Check login state
+GET https://localhost:8443/stats/count/logins HTTP/1.1
+
+###

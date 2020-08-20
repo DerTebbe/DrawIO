@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h1 class="modal-title">Bearbeiten</h1>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="usernameInput">Benutzername</label>
+    <input ngbAutofocus type="text" class="form-control" id="usernameInput" [(ngModel)]="this.user.username">
+    <label for="firstNameInput">Vorname</label>
+    <input type="text" class="form-control" id="firstNameInput" [(ngModel)]="this.user.firstName">
+    <label for="lastNameInput">Nachname</label>
+    <input type="text" class="form-control" id="lastNameInput" [(ngModel)]="this.user.lastName">
+    <label for="passwordInput">Passwort</label>
+    <input type="text" class="form-control" id="passwordInput" [(ngModel)]="this.password">
+    <label for="rightsInput">Rechte</label>
+    <input type="number" class="form-control" id="rightsInput" [(ngModel)]="this.user.rights">
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.dismiss('close')">Abbrechen</button>
+  <button type="button" class="btn btn-success" (click)="save()">Speichern</button>
+</div>

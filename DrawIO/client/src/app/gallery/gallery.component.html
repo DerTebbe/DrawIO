@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center row">
+    <div *ngFor="let drawingID of drawingIDs">
+      <div class="col-1 m-2 mr-auto">
+        <app-drawing-card [drawingID]="drawingID" (refreshEvent)="ngOnInit()"></app-drawing-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="load-more">
+  <button (click)="onLoadMore()" type="button" class="btn btn-primary fa fa-chevron-circle-down load-more-button">Mehr</button>
+</div>

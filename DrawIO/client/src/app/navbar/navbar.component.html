@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark mb-5">
+    <img src="../../assets/images/LogoWeiß.png" alt="Logo" class="logo cursor-pointer dropdown" (click)="router.navigateByUrl('')">
+  <button class="navbar-toggler" type="button" (click)="navbarOpen = !navbarOpen">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}">
+    <div class="mr-auto">
+      <a class="btn btn-outline-secondary" (click)="router.navigate(['/impressum'])">Impressum</a>
+      <a class="btn btn-outline-secondary" (click)="router.navigate(['/datenschutz'])">Datenschutz</a>
+    </div>
+    <div *ngIf="loginService.hasRights(Rights.User)" class="navbar-nav">
+      <button class="btn btn-primary m-1" type="button" (click)="router.navigate(['/draw'])">Jetzt zeichnen!</button>
+      <button class="btn btn-primary m-1" type="button" (click)="router.navigate(['/gallery'])">Galerie</button>
+      <button class="btn btn-primary m-1" type="button"
+              (click)="router.navigate(['/profile'])">{{loginService.loggedInUser.username}}</button>
+      <button class="btn btn-primary m-1" type="button" (click)="handleLogout()">Logout</button>
+    </div>
+    <div *ngIf="!loginService.hasRights(Rights.User)" class="navbar-nav">
+      <button class="btn btn-primary m-1" type="button" (click)="openLoginModal()">Login</button>
+      <button class="btn btn-primary m-1" type="button" (click)="openRegisterModal()">Registrierung</button>
+    </div>
+  </div>
+
+</nav>

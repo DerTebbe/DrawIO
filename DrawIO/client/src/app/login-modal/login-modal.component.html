@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h1 class="modal-title">Login</h1>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="usernameInput">Benutzername</label>
+    <input ngbAutofocus type="text" class="form-control" id="usernameInput" [(ngModel)]="username" (keyup)="onKeyUp($event)">
+    <label for="passwordInput">Passwort</label>
+    <input type="password" class="form-control" id="passwordInput" [(ngModel)]="password" (keyup)="onKeyUp($event)">
+  </div>
+  <p>Noch nicht angemeldet?<a href="#" (click)="openRegisterModal()"> Jetzt registrieren!</a></p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success btn-block" (click)="handleLogin()">Login</button>
+  <a [href]="link" class="btn btn-danger btn-block">
+    <i class="fa fa-google" style="margin-right: 20px"></i>Sign in with <b>Google</b>
+  </a>
+</div>

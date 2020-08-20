@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h1 class="modal-title">Profil löschen?</h1>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p *ngIf="!admin">Möchtest du dein Profil wirklich löschen?</p>
+  <div *ngIf="admin">Möchtest du das Profil von <div class="font-weight-bold">
+    {{user.username}} ({{user.id}})<br>
+    {{user.firstName}} {{user.lastName}}
+  </div> wirklich löschen?</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.dismiss()">Abbrechen</button>
+  <button type="button" class="btn btn-danger" (click)="this.delete()">Löschen</button>
+</div>

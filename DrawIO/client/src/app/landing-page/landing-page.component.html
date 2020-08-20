@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron-text">
+    <div class="title display-4 font-ellen">
+      <p style="font-family: 'Big Shoulders Text'">
+        DrawIO
+      </p>
+    </div>
+    <div class="description">
+      <p>
+        Wie Paint - Nur geiler
+      </p>
+    </div>
+  </div>
+</div>
+<section class="home-about container-fluid">
+  <blockquote class="blockquote display-4 text-center">
+    <p class="mb-0">I believe every day is a good day when you paint.</p>
+    <footer class="blockquote-footer">Bob Ross in <cite title="Source Title">The Joy of Painting</cite></footer>
+  </blockquote>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="card border-0">
+        <div class="card-body">
+          <div class="card-img">
+            <img [src]="promotionImageNr1Path" alt="brush"/>
+          </div>
+          <div class="card-text img-box">
+            Lass dich inspirieren und fange sofort an zu malen, egal wann, wie und wo. Mit DrawIO hast du deine Zeichenpalette immer mit dabei!
+          </div>
+        </div>
+      </div>
+      <div class="card border-0">
+        <div class="card-body">
+          <div class="card-img">
+            <img [src]="promotionImageNr2Path" alt="gallery"/>
+          </div>
+          <div class="card-text img-box">
+            Stelle dein Kunstwerk aus uns inspiriere andere Künstler mit deinen Werken, oder lass dich von unserer Galerie beflügeln und finde neue Ideen!
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <ng-container *ngFor="let box of aboutBoxes">
+        <div class="card border-0">
+          <div class="card-header">
+            <h2 class="display-4" style="color: #3e3f40">{{box.title}}</h2>
+          </div>
+          <div class="card-body border-left border-right border-bottom">
+            <div class="card-text">
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img height="64px" [src]="box.icon" [alt]="box.icon" />
+                </div>
+                <div class="col-sm-9">
+                  {{box.desc}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+<section class="home-register container-fluid">
+  <div class="row" (click)="router.navigate(['/draw'])">
+    <div class="col-sm-5 text-right">
+      <img [src]="getStartedIcon" [alt]="getStartedIcon" height="124px">
+    </div>
+    <div class="col-sm-7 pt-3 cursor-pointer">
+      <h1 class="display-4 font-ellen">Jetzt zeichnen >></h1>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="d-flex justify-content-between navbar footer-boarder" style="background-color: #efefef">
+    <div>
+      <img src="../../assets/images/Logo.png" alt="Logo" style="margin-left: 30px">
+    </div>
+    <div>
+      <span class="d-inline-block text-right" style="margin-right: 30px">DrawIO<br/>Wiesenstraße 14<br/>35390 Gießen</span>
+    </div>
+  </div>
+</footer>

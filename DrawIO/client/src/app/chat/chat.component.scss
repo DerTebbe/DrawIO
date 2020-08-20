@@ -1,0 +1,11 @@
+.chat-window {
+  display: inline-block;
+  border: 1px solid black;
+  .chat-messages {
+    height: 200px;
+    overflow: auto;
+    .message {
+      border: 1px solid black;
+    }
+  }
+}

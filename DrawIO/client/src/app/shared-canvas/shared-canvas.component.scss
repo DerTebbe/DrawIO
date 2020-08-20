@@ -1,0 +1,85 @@
+.canvas-container {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  //border: black solid 1px;
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: url("../../assets/cursors/pencil_cursor_32.png") 0 32, auto;
+  }
+  div {
+    display: inline-block;
+    position: relative;
+    width: 800px;
+    height: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    animation: fadein 0.5s forwards;
+    p {
+      background-color: rgba(255, 255, 255, 0.75);
+      border: 10px solid transparent;
+      border-radius: 25px;
+      display: inline-block;
+      text-align: center;
+      margin: 0;
+      animation: slidein-center 0.5s forwards;
+      cursor: default;
+      user-select: none;
+    }
+  }
+}
+
+#layerlist {
+  li {
+    &.locked {
+      background-color: lightgray;
+    }
+    p {
+      display: inline-block;
+    }
+    img {
+      display: inline-block;
+      border: 1px solid black;
+      width: 4rem;
+      height: 3rem;
+      margin-right: 1em;
+    }
+    input[type='checkbox'] {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slidein-center {
+  from {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+  }
+  to {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
+
+.toolbar-column {
+  margin: 5px;
+  padding-top: 10px;
+}

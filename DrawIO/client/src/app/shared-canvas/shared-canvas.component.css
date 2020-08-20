@@ -1,0 +1,21 @@
+.canvas-container {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  border: black solid 1px;
+}
+.canvas-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: url("../../assets/cursors/pencil_cursor_32.png") 0 32, auto;
+}
+
+#layerlist li.dragElem {
+  opacity: 0.4;
+}
+#layerlist li.over {
+  border: 10px dashed black;
+}
+
+/*# sourceMappingURL=shared-canvas.component.css.map */

@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: content;
+  overflow: auto;
+}
+

@@ -1,0 +1,160 @@
+@import "../../assets/scss/styles";
+
+html,body {
+  background: #efefef;
+  font-family: "Arial";
+}
+
+.container {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
+}
+
+main {
+  padding: 20px 20px 0px 20px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 100px;
+  border: 4px solid #fff;
+}
+
+.name {
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18pt;
+  color: #777;
+}
+
+.info {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+  color: #aaa;
+}
+
+.stats {
+  margin-top: 25px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ededed;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.number-stat {
+  padding: 0px;
+  font-size: 14pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  color: #aaa;
+}
+
+.desc-stat {
+  margin-top: -15px;
+  font-size: 10pt;
+  color: #bbb;
+}
+
+.right {
+  padding: 0 25px 0 25px !important;
+}
+
+.nav {
+  display: inline-flex;
+}
+
+.nav li {
+  margin: 40px 30px 0 10px;
+  cursor: pointer;
+  font-size: 13pt;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #888;
+}
+
+.nav li:hover  {
+  color: #999;
+  border-bottom: 2px solid #999;
+}
+
+.selected {
+  color: #999;
+  border-bottom: 2px solid #999;
+}
+
+@media (max-width:990px) {
+  .nav {
+    display: none;
+  }
+}
+.gallery  {
+  margin-top: 35px;
+}
+
+.gallery div {
+  margin-bottom: 30px;
+}
+
+.gallery img {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.10);
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.profile-header {
+  margin-top: 33px;
+}
+
+.heading {
+  font-family: "Big Shoulders Text";
+}
+
+.inputfield {
+  width: 1000px;
+}
+
+.savechanges {
+  background-color: $drawio-green;
+  margin-right: 15px;
+}
+
+.deleteUserBtn {
+  background-color: $drawio-red;
+}
+
+.drawing-container {
+  max-width: 100%;
+  display: block;
+  transition: opacity ease-out 250ms;
+}
+.drawing-container:hover img {
+  opacity: 0.5;
+}
+.drawing-container:hover .drawing-text {
+  opacity: 1;
+  transition: opacity ease-out 250ms;
+}
+.drawing-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+}

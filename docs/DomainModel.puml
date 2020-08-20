@@ -1,0 +1,41 @@
+@startuml
+
+
+hide circle
+skinparam linetype ortho
+skinparam monochrome true
+skinparam componentStyle uml2
+
+entity User {
+    id: MongoObjectID
+    prename: String
+    surname: String
+    username: String
+    Password: Hash
+    creation_date: Date
+}
+
+entity Drawing {
+    id: MongoObjectID
+    creation_date: Date
+    visibility: Enum
+    drawing: Blob
+}
+
+entity DrawingComment {
+    id: MongoObjectID
+    text: String
+    date: Date
+}
+
+entity OnlineTime {
+    id: MongoObjectID
+    timestamp_login: Date
+    timestamp_logout: Date
+}
+
+User "*"--"*" Drawing
+User "1"--"*" DrawingComment
+Drawing "*"--"*" DrawingComment
+User "1"--"*" OnlineTime
+@enduml

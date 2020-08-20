@@ -1,0 +1,89 @@
+<div class="modal-header">
+  <h1 class="modal-title">Registrierung</h1>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form>
+    <fieldset>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for="inputFirstName">Vorname</label>
+          <div>
+            <input type="text" class="form-control"
+                   [(ngModel)]="firstName" name="firstName"
+                   id="inputFirstName"
+                   placeholder="Vorname"
+                   required>
+          </div>
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label for="inputLastName">Nachname</label>
+          <div>
+            <input type="text" class="form-control"
+                   [(ngModel)]="lastName" name="lastName"
+                   id="inputLastName"
+                   placeholder="Nachname"
+                   required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail">Username</label>
+        <div>
+          <input type="text" class="form-control"
+                 [(ngModel)]="username" name="username"
+                 id="inputEmail"
+                 placeholder="Username"
+                 required>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-group">
+          <label for="inputPassword">Passwort</label>
+          <div>
+            <input type="password" class="form-control"
+                   [(ngModel)]="password"
+                   name="password"
+                   id="inputPassword" placeholder="Passwort"
+                   required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Passwort bestätigen</label>
+          <div>
+            <input type="password" class="form-control"
+                   [(ngModel)]="confirmPassword"
+                   name="confirmPassword"
+                   id="confirmPassword" placeholder="Bestätigen">
+          </div>
+        </div>
+        <div *ngIf="loginservice.hasRights(Rights.Admin)" class="form-group">
+          <label for="rights">Rechte</label>
+          <div>
+            <input type="number" class="form-control" [(ngModel)]="rights" name="rights" id="rights" placeholder="Rechte">
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <p *ngIf="dataError" class="text-danger">Bitte gib alle notwendigen Daten an!</p>
+      <p *ngIf="passwordError" class="text-danger">Passwörter stimmen nicht überein!</p>
+
+
+      <div class="modal-footer">
+        <div>
+          <button type="reset" class="btn btn-default" (click)="activeModal.dismiss()">Abbrechen</button>
+          <button type="submit" class="btn btn-success" (click)="save()">Registrieren
+          </button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>

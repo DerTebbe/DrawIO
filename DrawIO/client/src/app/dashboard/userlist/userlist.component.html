@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center row">
+    <div *ngFor="let user of userlist">
+      <div class="m-4">
+        <app-user [user]="user" (refreshEvent)="ngOnInit()"></app-user>
+      </div>
+    </div>
+  </div>
+</div>

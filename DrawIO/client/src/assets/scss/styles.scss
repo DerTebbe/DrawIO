@@ -1,0 +1,100 @@
+@import "_fonts.scss";
+
+$drawio-white: #ebebf2;
+$drawio-white-hover-light: lighten($drawio-white, 10%);
+$drawio-white-hover-dark: darken($drawio-white, 5%);
+
+$drawio-black: #3e3f40;
+$drawio-black-hover-light: lighten($drawio-black, 10%);
+$drawio-black-hover-dark: darken($drawio-black, 5%);
+
+$drawio-blue: #43cad9;
+$drawio-blue-hover-light: lighten($drawio-blue, 10%);
+$drawio-blue-hover-dark: darken($drawio-blue, 5%);
+
+$drawio-green: #56bf84;
+$drawio-green-hover-light: lighten($drawio-green, 10%);
+$drawio-green-hover-dark: darken($drawio-green, 5%);
+
+$drawio-red: #e65f5b;
+$drawio-red-hover-light: lighten($drawio-red, 10%);
+$drawio-red-hover-dark: darken($drawio-red, 5%);
+
+$google-blue: #4285F4;
+$google-blue-hover-light: lighten($google-blue, 10%);
+$google-blue-hover-dark: darken($google-blue, 5%);
+
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'ABeeZee';
+}
+
+// override bootstrap button styles to use custom colors
+.btn-primary {
+  background-color: $drawio-blue;
+  border-color: $drawio-blue;
+  &:hover {
+    background-color: $drawio-blue-hover-light;
+  }
+  &:not(:disabled):not(.disabled):active:focus, &:focus, &.focus {
+    box-shadow: 0 0 0 .2rem $drawio-blue-hover-dark !important;
+  }
+}
+.btn-danger {
+  background-color: $drawio-red;
+  border-color: $drawio-red;
+  &:hover {
+    background-color: $drawio-red-hover-light;
+  }
+  &:not(:disabled):not(.disabled):active:focus, &:focus, &.focus {
+    box-shadow: 0 0 0 .2rem $drawio-red-hover-dark !important;
+  }
+}
+.btn-success {
+  background-color: $drawio-green;
+  border-color: $drawio-green;
+  &:hover {
+    background-color: $drawio-green-hover-light;
+  }
+  &:not(:disabled):not(.disabled):active:focus, &:focus, &.focus {
+    box-shadow: 0 0 0 .2rem $drawio-green-hover-dark !important;
+  }
+}
+
+.btn-google {
+  background-color: $google-blue;
+  border-color: $google-blue;
+  &:hover {
+    background-color: $google-blue-hover-light;
+  }
+  &:not(:disabled):not(.disabled):active:focus, &:focus, &.focus {
+    box-shadow: 0 0 0 .2rem $google-blue-hover-dark !important;
+  }
+}
+.navbar {
+  background-color: $drawio-black-hover-light;
+  margin-bottom: 0 !important;
+
+  * {
+    margin-left: 5px;
+  }
+
+  .navbar-brand {
+    margin-left: 0;
+  }
+
+  .btn.btn-google {
+    text-align: end;
+    fa {
+      margin-left: -11px;
+      margin-right: 10px;
+      background-color: white;
+      padding: 6px 10px;
+    }
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}

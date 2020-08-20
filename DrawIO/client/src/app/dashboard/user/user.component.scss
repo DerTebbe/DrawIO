@@ -1,0 +1,13 @@
+.card {
+  width: 16rem;
+}
+.col {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 991px) {
+  img {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+
+.col-5 {
+  white-space: nowrap;
+  min-width: 240px;
+}
+
+@media (max-width: 830px) {
+  .col-5 {
+    width: 12px;
+  }
+  .col-6 {
+    min-width: 240px;
+  }
+}
+
+

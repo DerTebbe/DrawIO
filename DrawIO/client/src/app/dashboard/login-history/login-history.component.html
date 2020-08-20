@@ -1,0 +1,15 @@
+<div class="container-fluid p-5">
+  <div class="">
+      <div *ngFor="let entry of loginHistory">
+        <div class="m-4">
+          <app-login-history-entry [entry]="entry"></app-login-history-entry>
+        </div>
+    </div>
+  </div>
+  <button class="btn btn-outline-primary m-2" (click)="load()">Mehr laden</button>
+  <button class="btn btn-outline-primary m-2" (click)="reset()">Reset</button>
+</div>
+
+
+
+
