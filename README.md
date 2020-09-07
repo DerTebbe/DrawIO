@@ -1,7 +1,5 @@
 # WBS2 Projektkonzept
 
-Eine deployte Instanz der awendung kann unter [drawio.fmuenscher.de](https://drawio.fmuenscher.de) aufgerufen werden.
-
 ## Mitglieder
 Dieses Projekt wurde von den folgenden Personen gestützt:
 - Jannis Weber
